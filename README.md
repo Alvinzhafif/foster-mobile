@@ -110,11 +110,14 @@ As i have mentioned before, clean architecture is a good etiquette for a develop
 
 #### Can we retrieve JSON data without creating a model first? If yes, is it better than creating a model before retrieving JSON data?
 <hr>
+
 The answer is yes it is possible to do so. This method is often done when the `JSON` data itself is not well-structured and or when there's no need to perform any sort of transformations to the data itself before using it. Despite that, it is better to create a model before retrieving the `JSON` data. Models can provide a clear and consistent representation of `JSON` data, a Model can also ensure the data type so there won't be any incorrect manipulation of data, And by using a Model the `JSON`'s data can be validated easily, as it will ensure that the data is in the expected format along with its required specifics.
 
 #### Explain the function of CookieRequest and explain why a CookieRequest instance needs to be shared with all components in a Flutter application.
 <hr>
+
 A `CookieRequest` in `Flutter` has a unique purpose, it serves as an instance that is responsible for managing cookies that come through `HTTP` requests. It stores the `Cookies` received from the server responses and automatically includes them in other requests to that same domain. A `CookieRequest` must be shared with all components to ensure consistency across the application, by using a single `CookieRequest` all components can make authenticated requests to the same domain, And by passing `CookieRequest` to all components, it can help protect against security vulnerabilities. This can usually come from duplicate data or multiple `Cookies`.
+
 #### 
 
 
