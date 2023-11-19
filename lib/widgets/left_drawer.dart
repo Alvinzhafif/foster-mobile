@@ -18,7 +18,7 @@ class LeftDrawer extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  'City of Sorus',
+                  'Shopping List',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
@@ -28,7 +28,7 @@ class LeftDrawer extends StatelessWidget {
                 ),
                 Padding(padding: EdgeInsets.all(10)),
                 Text(
-                  "The best merchant in town!",
+                  "Write all your shopping needs here!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 15,
