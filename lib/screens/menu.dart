@@ -25,11 +25,9 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Shopping List',
-        ),
-        backgroundColor: Colors.indigo,
-        foregroundColor: Colors.white,
+        title: const Text('City Of Sorus'),
+        backgroundColor: Colors.purple,
+        foregroundColor: Colors.yellow,
       ),
       drawer: const LeftDrawer(),
       body: SingleChildScrollView(
@@ -43,12 +41,12 @@ class MyHomePage extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                 // Text widget to display text with center alignment and appropriate style
                 child: Text(
-                  'PBP Shop', // Text indicating the shop name
+                  'Foster The Merchant', // Text indicating the shop name
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.yellow),
                 ),
               ),
               // Grid layout

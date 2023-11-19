@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foster_mobile/screens/itemform.dart';
-import 'package:foster_mobile/screens/ViewItem.dart';
+import 'package:foster_mobile/screens/list_item.dart';
+import 'package:foster_mobile/screens/login.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
 
 class ShopItem {
   final String name;
@@ -16,11 +19,12 @@ class ShopCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final request = context.watch<CookieRequest>();
     return Material(
-      color: Colors.indigo,
+      color: Colors.purple,
       child: InkWell(
         // Responsive touch area
-        onTap: () {
+        onTap: () async {
           // Show a SnackBar when clicked
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
@@ -29,10 +33,28 @@ class ShopCard extends StatelessWidget {
           if (item.name == "Add Item") {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const ShopFormPage()));
-          }
-          if (item.name == "View Items") {
+          } else if (item.name == "View Items") {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const ViewItemPage()));
+                MaterialPageRoute(builder: (context) => const ItemPage()));
+          } else if (item.name == "Logout") {
+            final response = await request.logout(
+                // TODO: Change the URL to your Django app's URL. Don't forget to add the trailing slash (/) if needed.
+                "http://localhost:8000/auth/logout/");
+            String message = response["message"];
+            if (response['status']) {
+              String uname = response["username"];
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text("$message Good bye, $uname."),
+              ));
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginPage()),
+              );
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text("$message"),
+              ));
+            }
           }
         },
         child: Container(
@@ -44,14 +66,14 @@ class ShopCard extends StatelessWidget {
               children: [
                 Icon(
                   item.icon,
-                  color: Colors.white,
+                  color: Colors.yellow,
                   size: 30.0,
                 ),
                 const Padding(padding: EdgeInsets.all(3)),
                 Text(
                   item.name,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.yellow),
                 ),
               ],
             ),

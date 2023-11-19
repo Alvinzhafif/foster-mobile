@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foster_mobile/screens/list_item.dart';
 import 'package:foster_mobile/screens/menu.dart';
 import 'package:foster_mobile/screens/itemform.dart';
-import 'package:foster_mobile/screens/ViewItem.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -13,26 +13,26 @@ class LeftDrawer extends StatelessWidget {
         children: [
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.indigo,
+              color: Colors.purple,
             ),
             child: Column(
               children: [
                 Text(
-                  'Shopping List',
+                  'City Of Sorus',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.yellow,
                   ),
                 ),
                 Padding(padding: EdgeInsets.all(10)),
                 Text(
-                  "Write all your shopping needs here!",
+                  "All items you need for your travels!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 15,
-                    color: Colors.white,
+                    color: Colors.yellow,
                     fontWeight: FontWeight.normal,
                   ),
                 ),
@@ -64,15 +64,14 @@ class LeftDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.checklist),
-            title: const Text('View Items'),
-            // redirect to ShopFormPage
+            leading: const Icon(Icons.shopping_basket),
+            title: const Text('Product List'),
             onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ViewItemPage(),
-                  ));
+              // Route menu to product page
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ItemPage()),
+              );
             },
           ),
         ],
