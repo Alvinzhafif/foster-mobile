@@ -175,7 +175,7 @@ class _ShopFormPageState extends State<ShopFormPage> {
                   ),
                   onChanged: (String? value) {
                     setState(() {
-                      _type = value!;
+                      _rarity = value!;
                     });
                   },
                   validator: (String? value) {
@@ -205,8 +205,9 @@ class _ShopFormPageState extends State<ShopFormPage> {
                               'amount': _amount.toString(),
                               'price': _price.toString(),
                               'description': _description,
+                              'type': _type,
                               'rarity': _rarity,
-                              'type': _type
+
                               // TODO: Adjust the fields with your Django model
                             }));
                         if (response['status'] == 'success') {
