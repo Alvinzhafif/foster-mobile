@@ -143,7 +143,20 @@ To achieve this we can first make the models of the `username` and the `password
 * Text:	Displays text.
 * SizedBox:	Adds a fixed amount of vertical space between child widgets.
 * ElevatedButton:	Displays a button with a raised shadow.
-* FloatingActionButton:	Displays a floating button with an icon.  
+* FloatingActionButton:	Displays a floating button with an icon.
+2. in the `itemform.dart` file
+* Scaffold:	Provides the basic structure of the screen, including the app bar, drawer, and body.
+* AppBar:	Displays the title of the screen and provides a back button.
+* LeftDrawer:	Provides a navigation drawer on the left side of the screen.
+* Form:	Validates the form fields and prevents submission if any fields are invalid.
+* SingleChildScrollView:	Ensures that the form can scroll if its content exceeds the available screen space.
+* Column:	Arranges child widgets vertically.
+* Padding:	Adds padding around the child widget.
+* TextFormField:	Captures user input and displays a validation message if the input is invalid.
+* ElevatedButton:	Displays a button with a raised shadow.
+* SnackBar:	Displays a floating message at the bottom of the screen.
+* MaterialPageRoute:	Represents a route that transitions between pages using a material-style animation.
+  
 
 
 
