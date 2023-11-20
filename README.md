@@ -118,7 +118,18 @@ The answer is yes it is possible to do so. This method is often done when the `J
 
 A `CookieRequest` in `Flutter` has a unique purpose, it serves as an instance that is responsible for managing cookies that come through `HTTP` requests. It stores the `Cookies` received from the server responses and automatically includes them in other requests to that same domain. A `CookieRequest` must be shared with all components to ensure consistency across the application, by using a single `CookieRequest` all components can make authenticated requests to the same domain, And by passing `CookieRequest` to all components, it can help protect against security vulnerabilities. This can usually come from duplicate data or multiple `Cookies`.
 
-#### 
+#### Explain the mechanism of fetching data from JSON until it can be displayed on Flutter.
+<hr>
+
+There are a few steps for a `Flutter` App to catch `JSON` data. First, they will make an `HTTP` request this can be done by giving the `HTTP` response to the `Dart` code and then it will wait for a response from the `HTTP`. Then for it to be displayed we need to parse the `JSON` data, we could achieve this by adding the line `json.decode` from the `dart:convert` library. Next to display the data we need to model it, this can be achieved by creating a mirror sample data of the `JSON` data, and convert it into `Dart` objects by using the `.fromJson` line. Then finally we can call the variable to display it using ${myData.parameter format.
+
+
+#### Explain the authentication mechanism from entering account data on Flutter to Django authentication completion and the display of menus on Flutter.
+<hr>
+
+To achieve this we can first make the models of the `username` and the `password` that can serve as the mirror data from the login function inside of the `Flutter` App, this will then be mapped to the `Django's` login page. Then in the `Django` project we can make a new login function for the `Flutter` app but now we use a `JSON` data 
+
+
 
 
 
