@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foster_mobile/screens/detailItem.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:foster_mobile/models/item.dart';
@@ -37,7 +38,9 @@ class _ProductPageState extends State<ItemPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Item'),
+          title: const Text('View Items'),
+          backgroundColor: Colors.purple,
+          foregroundColor: Colors.yellow,
         ),
         drawer: const LeftDrawer(),
         body: FutureBuilder(
@@ -51,48 +54,55 @@ class _ProductPageState extends State<ItemPage> {
                     children: [
                       Text(
                         "No product data available.",
-                        style:
-                            TextStyle(color: Color(0xff59A5D8), fontSize: 20),
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 138, 89, 216),
+                            fontSize: 20),
                       ),
                       SizedBox(height: 8),
                     ],
                   );
                 } else {
                   return ListView.builder(
-                      itemCount: snapshot.data!.length,
-                      itemBuilder: (_, index) => Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 12),
-                            padding: const EdgeInsets.all(20.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (_, index) => Card(
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 12),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  Item_Detail_Page(item: snapshot.data![index]),
+                            ),
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/myimage.png',
+                              width: 200,
+                              height: 100,
+                            ),
+                            const SizedBox(width: 16),
+                            Expanded(
+                              child: ListTile(
+                                title: Text(
                                   "${snapshot.data![index].fields.name}",
                                   style: const TextStyle(
-                                    fontSize: 18.0,
+                                    fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                const SizedBox(height: 10),
-                                Text(
-                                    "Amount: ${snapshot.data![index].fields.amount}"),
-                                const SizedBox(height: 10),
-                                Text(
-                                    "Price: ${snapshot.data![index].fields.price}"),
-                                const SizedBox(height: 10),
-                                Text(
-                                    "Description: ${snapshot.data![index].fields.description}"),
-                                const SizedBox(height: 10),
-                                Text(
-                                    "Type: ${snapshot.data![index].fields.type}"),
-                                const SizedBox(height: 10),
-                                Text(
-                                    "Rarity: ${snapshot.data![index].fields.rarity}")
-                              ],
+                                subtitle: Text(
+                                    "Price: ${snapshot.data![index].fields.price} \nAmount: ${snapshot.data![index].fields.amount} \nDescription: ${snapshot.data![index].fields.description} \nType: ${snapshot.data![index].fields.type} \nRarity: ${snapshot.data![index].fields.rarity}"),
+                              ),
                             ),
-                          ));
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
                 }
               }
             }));
