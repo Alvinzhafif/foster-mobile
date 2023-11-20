@@ -127,7 +127,12 @@ There are a few steps for a `Flutter` App to catch `JSON` data. First, they will
 #### Explain the authentication mechanism from entering account data on Flutter to Django authentication completion and the display of menus on Flutter.
 <hr>
 
-To achieve this we can first make the models of the `username` and the `password` that can serve as the mirror data from the login function inside of the `Flutter` App, this will then be mapped to the `Django's` login page. Then in the `Django` project we can make a new login function for the `Flutter` app but now we use a `JSON` data 
+To achieve this we can first make the models of the `username` and the `password` that can serve as the mirror data from the login function inside of the `Flutter` App, this will then be mapped to the `Django's` login page. Then in the `Django` project we can make a new login function for the `Flutter` app but now we use a `JSON` data to retrieve the correct displayed message after login. Then in the dart file we make another `widget build` method and use an if statement to verify the login authentication, this can be achieved by using the `CookieRequest` class to send a request to the `django` server. Then it validates the crendetials through the views.py function made in the `Django` project previously. If the login credentials are correct then the `JsonResponse` will return the username and password of the validated user. And once login is succesful then the dart file will redirect the user to the the main `FLutter` page. Then the display of menus will be displayed through the main `Dart` file.
+
+#### List all the widgets you used in this assignment and explain their respective functions.
+<hr>
+
+
 
 
 
