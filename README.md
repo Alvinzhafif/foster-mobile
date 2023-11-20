@@ -246,8 +246,18 @@ Now i make the `_LoginPageState` class that will be used to construct the forms 
 
 First, i went over to my django project. Then i retrieve the `Json` data of all my products as sample data, and opened [quicktype](http://app.quicktype.io/). this website will allow me ease on making custom models for making the custom models in the project. After formatting the json data and requested the flutter code i went back over to my `Flutter` app and added a new folder named `models` inside of the `lib` directory. inside of the `models` folder i made a new file named `item.dart` and re-used the code i got from the webpage to make my custom models.
 
-3. 
+3.  Create a page containing a list of all items available at the JSON endpoint in Django that you have deployed.
 
+First i made a new file named `list_item.dart` inside of the `lib/screens` directory, then imported the necessary components that will be used later on the code. Next, i made the `ItemPage` class and added the constructor so the class can be called later on. and i made a `state` property, which is a `_ProductPageState` object. The `_ProductPageState` object is responsible for building the UI for the screen later on.
+<br>
+Now i construct the `_ProductPageState` class, Then i used `Future` for the list of items. This will be used for retrieving the datas and also implementing asynchronous programming.
+Next, i route my `Django` projects json so that it can retrieve the data from there, after that, i used `jsonDecode` and `fromJson` for decoding the response into `JSON` and converting the `JSON to a Product Object` respectively. After that i constructed the display using the `Widget build` method and i retrieved each of the data models according to my `Django` project and display it in a card like format. And just for fun and curiosity i added a picture to each of the products by adding a picture into a new folder called `assets` in the root directory, and then inserting the image using `Image.asset`. For displaying the item's name i used a `Title` styling and for the rest of the models i implemented a `subtitle` styling.
+
+4. Create a detail page for each item listed on the Item list page.
+
+First i made a new file named `detailitem.dart` inside of the `lib/screens` directory and then imported the necessary components that will be used on the code later on. And made the Item_Detail_Page class declare the variable Item as item which is the item model. Next, i made the constructor so the class can be called later on. Then, i made a `widget build` method here i will construct the detailed criteria of the item and display it in a card like display. Similar to the list of items previously, i also added a picture into the card, however this time i used `Image.network`. Finally i implemented a back button for returning to the item page. I also added the drawer by calling the `LeftDrawer()` class from the drawer dart. 
+<br>
+For routing the list of items to this page, i used `GestureDetector`, this will track clicks made on each and every of the item displayed there. Inside i added `onTap ()` to trigger the click, and then i used `Navigator.push` to reroute the user to the detailed item page whilst also retrieving specific data that the user clicked using `snapshot` 
 
 
 
