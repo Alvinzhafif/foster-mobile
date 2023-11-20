@@ -132,18 +132,18 @@ To achieve this we can first make the models of the `username` and the `password
 #### List all the widgets you used in this assignment and explain their respective functions.
 <hr>
 
-* in the `detailitem.dart` file
-** Scaffold:	Provides the basic structure of the screen, including the app bar, drawer, and body.
-** AppBar:	Displays the title of the screen and provides a back button.
-** LeftDrawer:	Provides a navigation drawer on the left side of the screen.
-** Card:	Displays a container with rounded corners and a shadow.
-** Padding:	Adds padding around the child widget.
-** Column:	Arranges child widgets vertically.
-** Image.network:	Displays an image from a URL.
-** Text:	Displays text.
-** SizedBox:	Adds a fixed amount of vertical space between child widgets.
-** ElevatedButton:	Displays a button with a raised shadow.
-** FloatingActionButton:	Displays a floating button with an icon.  
+1. in the `detailitem.dart` file
+* Scaffold:	Provides the basic structure of the screen, including the app bar, drawer, and body.
+* AppBar:	Displays the title of the screen and provides a back button.
+* LeftDrawer:	Provides a navigation drawer on the left side of the screen.
+* Card:	Displays a container with rounded corners and a shadow.
+* Padding:	Adds padding around the child widget.
+* Column:	Arranges child widgets vertically.
+* Image.network:	Displays an image from a URL.
+* Text:	Displays text.
+* SizedBox:	Adds a fixed amount of vertical space between child widgets.
+* ElevatedButton:	Displays a button with a raised shadow.
+* FloatingActionButton:	Displays a floating button with an icon.  
 
 
 
