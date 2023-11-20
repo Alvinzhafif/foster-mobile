@@ -133,30 +133,124 @@ To achieve this we can first make the models of the `username` and the `password
 <hr>
 
 1. in the `detailitem.dart` file
-* Scaffold:	Provides the basic structure of the screen, including the app bar, drawer, and body.
-* AppBar:	Displays the title of the screen and provides a back button.
-* LeftDrawer:	Provides a navigation drawer on the left side of the screen.
-* Card:	Displays a container with rounded corners and a shadow.
-* Padding:	Adds padding around the child widget.
-* Column:	Arranges child widgets vertically.
-* Image.network:	Displays an image from a URL.
-* Text:	Displays text.
-* SizedBox:	Adds a fixed amount of vertical space between child widgets.
-* ElevatedButton:	Displays a button with a raised shadow.
-* FloatingActionButton:	Displays a floating button with an icon.
+
+* Scaffold: Provides the basic structure of the screen, including the app bar, a drawer, and the body. The app bar displays the title of the screen and provides a back button. The drawer provides navigation options for the app. The body contains the main content of the screen, which in this case is a card.
+
+* AppBar: Displays the title of the screen, which is "Item Details". It also provides a back button that allows users to navigate back to the previous screen.
+
+* LeftDrawer: Provides a navigation drawer on the left side of the screen. The drawer contains links to other screens in the app.
+
+* Card: Displays a container with rounded corners and a shadow. The card contains the item details, including the item name, price, amount, description, type, and rarity.
+
+* Padding: Adds padding around the child widget. In this case, padding is added around the card to create some space between the card and the edges of the screen.
+
+* Column: Arranges the child widgets vertically. In this case, the child widgets are the item name, price, amount, description, type, and rarity texts.
+
+* Image.network: Displays an image from a URL, which in this case, is the image of the item. The image is displayed above the item name.
+
+* Text: Displays text. The text widgets in this case display the item name, price, amount, description, type, and rarity.
+
+* SizedBox: Adds a fixed amount of vertical space between child widgets. In this case, SizedBox widgets are used to add space between the item details and the floating action button.
+
+* ElevatedButton: Displays a button with a raised shadow. In this case, the button is used to navigate back to the previous screen.
+
+* FloatingActionButton: Displays a floating button with an icon. In this case, the floating button is a back button that allows users to navigate back to the previous screen.
+
 2. in the `itemform.dart` file
-* Scaffold:	Provides the basic structure of the screen, including the app bar, drawer, and body.
-* AppBar:	Displays the title of the screen and provides a back button.
-* LeftDrawer:	Provides a navigation drawer on the left side of the screen.
-* Form:	Validates the form fields and prevents submission if any fields are invalid.
-* SingleChildScrollView:	Ensures that the form can scroll if its content exceeds the available screen space.
-* Column:	Arranges child widgets vertically.
-* Padding:	Adds padding around the child widget.
-* TextFormField:	Captures user input and displays a validation message if the input is invalid.
-* ElevatedButton:	Displays a button with a raised shadow.
-* SnackBar:	Displays a floating message at the bottom of the screen.
-* MaterialPageRoute:	Represents a route that transitions between pages using a material-style animation.
+
+* Scaffold: Provides the basic structure of the screen, including the app bar, a drawer, and the body. The app bar displays the title of the screen. The drawer provides navigation options for the app. The body contains the main content of the screen, which in this case is a form.
+
+* AppBar: Displays the title of the screen, which is "Add Item Form".
+
+* LeftDrawer: Provides a navigation drawer on the left side of the screen. The drawer contains links to other screens in the app.
+
+* Form: Validates the form fields and prevents submission if any fields are invalid. The form contains fields for the item name, amount, price, description, type, and rarity.
+
+* SingleChildScrollView: Ensures that the form can scroll if its content exceeds the available screen space. This is important because the form may contain a lot of text, and it is important that users can see all of the content without having to scroll.
+
+* Column: Arranges the child widgets vertically. In this case, the child widgets are the form fields, the save button, and the snack bar.
+
+* Padding: Adds padding around the child widget. In this case, padding is added around the form fields and the save button to create some space between the widgets and the edges of the screen.
+
+* TextFormField: Captures user input and displays a validation message if the input is invalid. The form contains TextFormField fields for the item name, amount, price, description, type, and rarity.
+
+* ElevatedButton: Displays a button with a raised shadow. In this case, the button is used to save the form data.
+
+* SnackBar: Displays a floating message at the bottom of the screen. The snack bar is used to display messages to the user, such as a message indicating that the item has been saved successfully.
+
+* MaterialPageRoute: Represents a route that transitions between pages using a material-style animation. This is used to navigate between screens in the app.
   
+3. in the `list_item.dart` file
+   
+* Scaffold: Provides the basic structure of the screen, including the app bar, a drawer, and the body. The app bar displays the title of the screen. The drawer provides navigation options for the app. The body contains the main content of the screen, which in this case is a form.
+
+* AppBar: Displays the title of the screen, which is "Add Item Form".
+
+* LeftDrawer: Provides a navigation drawer on the left side of the screen. The drawer contains links to other screens in the app.
+
+* FutureBuilder: Displays a progress indicator while data is being fetched from the API. Once the data is fetched, it displays a list of products.
+
+* ListView.builder: Builds a list of widgets based on the data fetched from the API. In this case, it builds a list of `Card` widgets, each of which represents a product.
+
+* Card: Displays a container with rounded corners and a shadow. The card contains information about a product, including its image, name, price, amount, description, type, and rarity.
+
+* GestureDetector: Detects when the user taps on a product card. When the user taps on a card, the Item_Detail_Page is opened, which displays more detailed information about the product.
+
+* Image.asset: Displays an image from the assets folder. In this case, it displays an image named `myimage.png`. which is the picture that I have loaded into the project.
+
+* SizedBox: Adds space between widgets. In this case, it adds space between the image and the product name.
+
+* Expanded: Expands a widget to fill the available space. In this case, it expands the product name and description so that they fill the remaining space in the card.
+
+* ListTile: Displays a list item with a leading icon, a title, and a subtitle. In this case, the leading icon is an image of the product, the title is the product name, and the subtitle is the product price, amount, description, type, and rarity. Which is according to the models i have defined in my previous project
+
+* Text: Displays text. In this case, it displays the product name, price, amount, description, type, and rarity.
+
+4. in the `login.dart` file
+   
+* Scaffold:	Provides the basic structure of the screen, including the app bar, and body. The app bar displays the title of the screen. The body contains the main content of the screen, which in this case is a login form.
+
+* AppBar: Displays the title of the screen, which is "Add Item Form".
+
+* Container: Provides a way to group widgets and add padding to them. In this case, it groups the login form widgets and adds padding to the entire form.
+
+* Column: Arranges its child widgets vertically. In this case, it arranges the username text field, password text field, and login button vertically.
+
+* TextField: Displays a text field that allows the user to enter text. In this case, there are two text fields, one for the username and one for the password.
+
+* InputDecoration: Customizes the appearance of a TextField. In this case, it sets the label text for the username and password fields.
+
+* SizedBox: Adds space between widgets. In this case, it adds space between the username text field and the password text field, and between the password text field and the login button.
+
+* ElevatedButton: Displays a button with a raised shadow. In this case, the button is used to submit the login form.
+
+* TextButton: Displays a button with a flat appearance. In this case, the text button is used to close the error dialog.
+
+* AlertDialog: Displays a modal dialog with a title, content, and actions. In this case, it is used to display an error message when the login fails.
+
+* Navigator.pushReplacement: Replaces the current screen with a new screen. In this case, it is used to replace the login screen with the home screen after a successful login.
+
+* SnackBar: Displays a floating message at the bottom of the screen. In this case, it is used to display a message welcoming the user after a successful login.
+
+#### Explain how you implement the checklist above step by step!
+
+1.  Create a login page in the Flutter project and Integrate the Django authentication system with the Flutter project.
+
+First i imported the necessary components for the code later on. Then i made a main function to run the LoginApp widget and start the app itself. Next i build a `MaterialApp` widget, which provides the basic structure for the app and also its constructor. The `MaterialApp` widget also has a title property, which sets the title of the app, and a theme property, which sets the theme for the app. The home property specifies the home screen for the app, which in this case is the `LoginPage` widget. Then i made a `LoginPageState` class is the widget for the login page. It has a state property, which is a `_LoginPageState` object. The `_LoginPageState` object itself is will be used for building the UI for the login page.
+<br>
+Next i went back to my django project, here i made a new folder named `authentication` and initiate is a new app. Then i imported some necessary packages for making the login function for it to be connected to the `Flutter`App. Next, i made a new function for logging in in the `flutter` app. The logic is almost the same with the normal `Django` login function the difference is that for this one i used a Json response for displaying the text messages into the `flutter` app.
+<br>
+Now i make the `_LoginPageState` class that will be used to construct the forms input field of the username and password and also for validating the input to the backend process which is my django project. First i mirror the data by making two variables for login and made them both `TextEditingController()` this will alow the text to be edited and reformatted later for validation. Next, i added the app bar, and constructed the forms using a `TextField` and passing the variables i made before as the input form's parameter. Then i route my previous django project and call it to the dart app for validation. If the credentials are correct then i reroute the user to the home page by passing the constructor function of the home page. If false then an error message with the respective error will be shown.
+
+2. Create a custom model according to your Django application project.
+
+First, i went over to my django project. Then i retrieve the `Json` data of all my products as sample data, and opened [quicktype](http://app.quicktype.io/). this website will allow me ease on making custom models for making the custom models in the project. After formatting the json data and requested the flutter code i went back over to my `Flutter` app and added a new folder named `models` inside of the `lib` directory. inside of the `models` folder i made a new file named `item.dart` and re-used the code i got from the webpage to make my custom models.
+
+3. 
+
+
+
+
 
 
 
